@@ -38,7 +38,7 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
-#product sorting
+# Product sorting
 def sort_by_name(any_product):
     return any_product ['name']
 
@@ -49,7 +49,7 @@ sorted_products = sorted(products, key=sort_by_name)
 
 print(type(products)) #> list
 
-#Departments (Part 1)
+# Departments (Part 1)
 
 products_count = len(products)
 
@@ -67,7 +67,7 @@ for i in sorted_products:
     print(" + " + i["name"] + " " + str(to_usd(i["price"])))
     
 
-#Departments (Part 2)
+# Departments (Part 2)
 
 departments = []
 
@@ -83,7 +83,9 @@ print("------------")
 print("THERE ARE " + str(department_count) + " DEPARTMENTS")
 print("------------")
 
+departments.sort()
+
 for d in departments:
-    print(d)
+    print(d.title())
 
 # TODO: write some Python code here to produce the desired output
