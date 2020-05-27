@@ -54,7 +54,7 @@ print(type(products)) #> list
 products_count = len(products)
 
 print("------------")
-print("THERE ARE " + str(products_count) + " PRODUCTS")
+print("THERE ARE " + str(products_count) + " PRODUCTS:")
 print("------------")
 
 # Print(products)
@@ -80,7 +80,7 @@ for i in products:
 department_count = len(departments)
 
 print("------------")
-print("THERE ARE " + str(department_count) + " DEPARTMENTS")
+print("THERE ARE " + str(department_count) + " DEPARTMENTS:")
 print("------------")
 
 departments.sort()
@@ -88,6 +88,10 @@ departments.sort()
 for d in departments:
     matching_products = [i for i in products if i["department"] == d]
     matching_products_count = len(matching_products)
-    print(d.title() + " (" + str(matching_products_count) + " products)")
+    if matching_products_count > 1:
+        label = "products"
+    else:
+        label = "product"
+    print(" + " + d.title() + " (" + str(matching_products_count) + " " + label + ")")
 
 # TODO: write some Python code here to produce the desired output
