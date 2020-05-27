@@ -25,6 +25,7 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
+#price definition
 def to_usd(my_price):
     """
     Converts a numeric value to usd-formatted string, for printing and display purposes.
@@ -37,23 +38,26 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
-
+#product sorting
 def sort_by_name(any_product):
     return any_product ['name']
 
 sorted_products = sorted(products, key=sort_by_name)
 
 
+#Product List Build
 
 print(type(products)) #> list
 
+#Departments (Part 1)
+
+products_count = len(products)
+
+print("------------")
+print("THERE ARE " + str(products_count) + " PRODUCTS")
 print("------------")
 
-print("THERE ARE", len(products), "PRODUCTS")
-
-print("------------")
-
-# print(products)
+# Print(products)
 
 for i in sorted_products:
     #print(i["name"]) (step 1)
@@ -63,5 +67,23 @@ for i in sorted_products:
     print(" + " + i["name"] + " " + str(to_usd(i["price"])))
     
 
+#Departments (Part 2)
+
+departments = []
+
+for i in products:
+    #print(i["department"])
+    #departments.append(i["department"])
+    if i["department"] not in departments:
+        departments.append(i["department"])
+
+department_count = len(departments)
+
+print("------------")
+print("THERE ARE " + str(department_count) + " DEPARTMENTS")
+print("------------")
+
+for d in departments:
+    print(d)
 
 # TODO: write some Python code here to produce the desired output
