@@ -37,6 +37,14 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
+
+def sort_by_name(any_product):
+    return any_product ['name']
+
+sorted_products = sorted(products, key=sort_by_name)
+
+
+
 print(type(products)) #> list
 
 print("------------")
@@ -47,7 +55,7 @@ print("------------")
 
 # print(products)
 
-for i in products:
+for i in sorted_products:
     #print(i["name"]) (step 1)
     #print(" + " + i["name"] + " " + "($4.99)") (step 2)
     #print(to_usd(i["price"])) (step 3)
